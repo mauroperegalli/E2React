@@ -1,9 +1,8 @@
 
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import { GeneralWrapper } from './components/GeneralWrapper';
 import { Navbar } from './components/Navbar';
-import { TodoList } from './pages/TodoList';
+import { Context } from './context/Context';
 import {Routes} from './routes/Routes'
 
 
@@ -14,8 +13,10 @@ function App() {
       <>
 
         <BrowserRouter>
-          <Navbar/>
-          <Routes></Routes>
+          <Context>
+            <Navbar/>
+            <Routes></Routes>
+          </Context>
         </BrowserRouter>
       </>
   );
